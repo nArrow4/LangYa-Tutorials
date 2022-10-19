@@ -20,7 +20,9 @@ jobs:
     - name: configue gitbook
       run: |
         npm install -g gitbook-cli
+        npm install -g patch-package
         gitbook install
+        patch-package
         # npm install -g gitbook-summary
                 
     - name: generate _book folder
