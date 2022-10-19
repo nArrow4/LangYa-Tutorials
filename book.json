@@ -1,7 +1,8 @@
 {
     "plugins" : [
         "theme-comscore",
-        "tbfed-pagefooter"
+        "tbfed-pagefooter",
+        "gitalk"
     ],
     "pluginsConfig": {
         "tbfed-pagefooter": {
