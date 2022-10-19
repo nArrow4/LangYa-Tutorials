@@ -1,2 +1,2 @@
-node_modules/*
-!node_modules/gitbook-plugin-tbfed-pagefooter/*
+node_modules
+_book
