@@ -20,7 +20,6 @@ jobs:
     - name: configue gitbook
       run: |
         npm install -g gitbook-cli
-        export PATH=$PATH:$(npm prefix -g)/bin
         gitbook install
         # npm install -g gitbook-summary
                 
