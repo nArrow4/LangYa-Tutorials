@@ -19,10 +19,8 @@ jobs:
       
     - name: configue gitbook
       run: |
-        npm install gitbook-cli   
-        npm install gitbook-plugin-theme-comscore
-        npm install gitbook-plugin-tbfed-pagefooter
-        npm -i --save gitalk
+        npm install -g gitbook-cli
+        export PATH=$PATH:$(npm prefix -g)/bin
         gitbook install
         # npm install -g gitbook-summary
                 
