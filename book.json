@@ -1,0 +1,14 @@
+{
+    "plugins" : [
+        "theme-comscore",
+        "tbfed-pagefooter",
+        "gitalk"
+    ],
+    "pluginsConfig": {
+        "tbfed-pagefooter": {
+          "copyright":"&copy LangYa",
+          "modify_label": "Update: ",
+          "modify_format": "YYYY-MM-DD HH:mm:ss"
+        }
+    }
+}
