@@ -1,10 +1,21 @@
 # Summary
 
 * [Introduction](README.md)
-* [Chapter1](chapter1/README.md)
+* [Chapter0: Before You Start](chapter0/README.md)
+    * [Contribute To This Repo](chapter0/how_to_contribute.md)
+* [Chapter1: ](chapter1/README.md)
     * [Section1.1](chapter1/section1.1.md)
     * [Section1.2](chapter1/section1.2.md)
-* [Chapter2](chapter2/README.md)
+* [Chapter2: ](chapter2/README.md)
     * [Section2.1](chapter2/section2.1.md)
     * [Section2.2](chapter2/section2.2.md)
+* [Chapter3: ](chapter3/README.md)
+    * [Section3.1](chapter3/section3.1.md)
+    * [Section3.2](chapter3/section3.2.md)
+* [Chapter4: ](chapter4/README.md)
+    * [Section4.1](chapter4/section4.1.md)
+    * [Section4.2](chapter4/section4.2.md)
+* [Chapter5: ](chapter5/README.md)
+    * [Section5.1](chapter5/section5.1.md)
+    * [Section5.2](chapter5/section5.2.md)
 
