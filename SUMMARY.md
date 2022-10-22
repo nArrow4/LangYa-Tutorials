@@ -2,8 +2,9 @@
 
 * [Introduction](README.md)
 * [Chapter0: 开始之前](chapter0/README.md)
+    * [关于狼牙算法组](chapter0/about_langya.md)
+    * [各项目组介绍](chapter0/intros_to_tasks.md)
     * [贡献你的一份力量](chapter0/how_to_contribute.md)
-    * [关于狼牙](chapter0/about_langya.md)
 * [Chapter1: 初识Linux](chapter1/README.md)
     * [Section1.1: Linux](chapter1/linux.md)
     * [Section1.2: GCC & Makefile & CMake](chapter1/gcc_makefile_cmake.md)
@@ -16,6 +17,7 @@
     * [Section2.2: Pose Estimation](chapter2/pose.md)
     * [PA2: Coordinate](chapter2/pa2.md)
 * [Chapter3: OpenCV图像处理](chapter3/README.md)
+    * [Section3.1: OpenCV](chapter3/opencv.md)
     * [PA3: Car Plate Recognition](chapter3/pa3.md)
 * [Chapter4: 贝叶斯滤波](chapter4/README.md)
     * [Section4.1: Kalman Filter](chapter4/kf.md)
