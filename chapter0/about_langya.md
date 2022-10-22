@@ -1,3 +1,3 @@
 # About LangYa
 
-<embed src="./intro.pdf" type="application/pdf">
+<iframe src="./intro.pdf" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
