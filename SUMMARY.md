@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [Chapter0: Before You Start](chapter0/README.md)
     * [Contribute To This Repo](chapter0/how_to_contribute.md)
-    * [What To Learn](chapter0/what_will_you_learn.md)
+    * [About LangYa](chapter0/about_langya.md)
 * [Chapter1: Explore Linux](chapter1/README.md)
     * [Section1.1: Linux](chapter1/section1.1.md)
     * [Section1.2: GCC](chapter1/section1.2.md)
