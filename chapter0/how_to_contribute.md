@@ -50,6 +50,18 @@ git commit -m "your commit messages"
 git push origin main
 ```
 
+注意commit消息需要满足以下格式：
+
+```
+[file path]: your changes(Zh/En)
+```
+
+比如
+
+```
+[chapter0/how_to_contribute.md]: Add pull request guidance
+```
+
 ### 创建Pull Request
 
 按照下图的方式提交修改，然后等待审核即可。如果提交前提示有冲突，请拉取最新的工程，然后重新提交。
