@@ -11,6 +11,7 @@
     * [Section1.3: Git](chapter1/git.md)
     * [Section1.4: Vim](chapter1/vim.md)
     * [Section1.5: VSCode](chapter1/vscode.md)
+    * [Section1.6: Markdown](chapter1/markdown.md)
     * [PA1: Environments](chapter1/pa1.md)
 * [Chapter2: 相机模型 & 位姿估计](chapter2/README.md)
     * [Section2.1: Camera Model](chapter2/camera_model.md)
