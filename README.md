@@ -16,7 +16,7 @@ Git、VSCode/Clion、CMake、GNU、...
 ## 如何获得帮助
 
 |Q|A|
-|-|--|
+|:--|:--|
 |代码报错、环境问题|Bing、Google|
 |函数API用法|对应软件库文档|
 |Linux指令用法|man指令|
