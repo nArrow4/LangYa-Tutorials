@@ -2,7 +2,7 @@
 
 ## C/C++代码是怎么在系统上运行的
 
-```mermaid
+```mermaid {align="center"}
 graph LR
 B1(GCC)
 B2(Makefile)
@@ -120,18 +120,36 @@ Makefile的规则是：当依赖项中如果有一个及以上的文件比目标
 cmake_minimum_required(VERSION 3.16.3)
 project(hello)
 
-# find_package(...)
-
 include_directories(.)
 add_executable(main 
     hello.cpp
     main.cpp)
-
-# target_link_libraries(main ...)
 ```
+
+### 链接开源库
+
+```cmake
+# CMakeLists.txt
+cmake_minimum_required(VERSION 3.16.3)
+project(opencv_demo)
+
+find_package(OpenCV REQUIRED)
+
+include_directories(.)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+add_executable(main 
+    main.cpp)
+
+target_link_libraries(main
+    ${OpenCV_LIBRARIES})
+```
+
 
 ### functions
 
-## 推荐阅读
-
-https://seisman.github.io/how-to-write-makefile/invoke.html
+```cmake
+functions(function_name args1 args2 ...)
+    message(${args1} ${args2} ...)
+endfunctions(function_name)
+```
