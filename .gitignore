@@ -1,3 +1,5 @@
 node_modules/*
 !node_modules/gitbook-plugin-tbfed-pagefooter
 _book
+.vscode
+build

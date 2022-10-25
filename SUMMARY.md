@@ -10,7 +10,7 @@
     * [Section1.2: GCC & Makefile & CMake](chapter1/gcc_makefile_cmake.md)
     * [Section1.3: Git](chapter1/git.md)
     * [Section1.4: Vim](chapter1/vim.md)
-    * [Section1.5: VSCode](chapter1/vscode.md)
+    * [Section1.5: Remote Server](chapter1/remote_server.md)
     * [Section1.6: Markdown](chapter1/markdown.md)
     * [PA1: Environments](chapter1/pa1.md)
 * [Chapter2: 相机模型 & 位姿估计](chapter2/README.md)
