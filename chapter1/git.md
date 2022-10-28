@@ -7,7 +7,7 @@
 sudo apt-get install git
 
 # configure
-git config --global user.name "xxx"        # your name
+git config --global user.name "xxx"             # your name
 git config --global user.email "xxx@xxx.com"    # your email
 ```
 
@@ -97,3 +97,56 @@ git checkout -B 分支名
 以上介绍的是 git 的一些基本功能, git 还提供很多强大的功能, 例如使用 git diff 比较同一个文件在不同版本中的区别, 使用 git bisect 进行二分搜索来寻找一个bug在哪次提交中被引入...
 
 其它功能的使用请参考 git help , man git , 或者在网上搜索相关资料.
+
+## Git Demo
+
+举几个常见的场景
+
+### 从Github上下载代码
+
+* 本地没有仓库
+
+```sh
+git clone https://github.com/nArrow4/LangYa-Tutorials.git
+cd LangYa-Tutorials
+```
+
+* 本地已新建仓库
+
+```sh
+cd LangYa-Tutorials
+git init
+git remote add origin https://github.com/nArrow4/LangYa-Tutorials.git
+git pull origin main
+```
+
+### 将代码提交到Github
+
+* 极简版本
+
+```sh
+git add .
+git commit -m "commit message"
+git push origin main
+```
+
+* 利用好分支
+
+```sh
+git checkout -b fix-bug
+# 在这里修改代码
+git add .
+git commit -m "[file path]: message"
+git checkout main
+git merge fix-bug
+git push origin main:main
+```
+
+### 从Github拉取代码
+
+```sh
+git pull origin main
+# 如果有冲突，自行解决然后重新pull，或者
+# 注意这种方法会覆盖本地修改
+git pull origin main --force
+```
