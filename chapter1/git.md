@@ -1,5 +1,17 @@
 # Section1.3: Git 快速入门
 
+## 必要的环境
+
+* github
+
+GitHub是一个面向开源及私有软件项目的托管平台
+
+你必须有一个[github账号](https://github.com/)，才能向这个仓库提交内容，这里有一份[教程](https://cloud.tencent.com/developer/article/1487508)
+
+* git
+
+为了和Github进行交互，团队选择Git作为版本管理工具，你需要进行[Git的基础配置](https://www.cnblogs.com/techflow/p/13703721.html)。
+
 ### Install && Configure Git
 
 ```sh
