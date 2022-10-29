@@ -11,7 +11,7 @@ B1-->C1(预编译)
 B1-->C2(编译)
 B1-->C3(汇编)
 B1-->C4(链接)
-B2-->D1(构建工程)
+B2-->D1(减少重复性工作)
 B3-->E1(生成Makefile)
 ```
 
@@ -35,11 +35,45 @@ B3-->E1(生成Makefile)
 
 用一个简单的C++程序来举例
 
+通过git查看相应代码
+```sh
+git checkout gcc_hello_world
+```
+
+发现demos中有一个main.cpp文件
+```cpp
+#include <iostream>
+
+void print() {
+    std::cout << "hello world." << std::endl;
+}
+
+int main() {
+    // print hello world
+    print();
+}
+```
+
+使用g++来编译
+```sh
+g++ main.cpp -o main
+./main
+# output
+hello world.
+```
+
+### 当C++代码被编译时，发生了什么
+
+通过git查看相应代码
+```sh
+git checkout gcc_step_by_step
+```
+
 ```cpp
 // hello.cpp
 #include "hello.h"
 
-int print() {
+void print() {
     std::cout << "hello world." << std::endl;
 }
 
@@ -47,7 +81,7 @@ int print() {
 #include <iostream>
 void print();
 
-// hello.cpp
+// main.cpp
 #include "hello.h"
 
 int main() {
@@ -63,10 +97,10 @@ int main() {
 2. 把代码中的所有注释去掉
 
 ```sh
-g++ --E main.cpp -o main.i
+g++ -E main.cpp -o main.i
 ```
 
-查看main.i文件的末尾
+查看main.i文件的末尾，可以看到头文件中的内容被加入到main.i中。但是只有函数声明，没有相关的实现。
 
 ```cpp
 ...
@@ -88,7 +122,7 @@ int main() {
 ```sh
 g++ -S main.i -o main.s
 ```
-
+可以看到主函数的标记
 ```cpp
 main:
     ...
@@ -105,7 +139,48 @@ g++ -c main.s -o main.o
 
 链接所有重定向代码和库文件得到可执行文件
 ```sh
-g++ main -o main.o
+g++ main.o -o main
+```
+但是！是不是突然报错了？
+```sh
+/usr/bin/ld: main.o: in function `main':
+main.cpp:(.text+0x9): undefined reference to `print()'
+collect2: error: ld returned 1 exit status
+```
+经典的undefined reference（未定义引用）错误，简单来说就是你使用了一个函数（这里是hello.h中的print），但是这个函数没有在你编译的cpp文件中实现。
+
+所以我们还需要去编译hello.cpp
+
+```sh
+g++ -c hello.cpp -o hello.o
+```
+
+然后就可以让main.o找到对应的实现了
+
+```sh
+g++ hello.o main.o -o main
+```
+
+同样得到可执行文件main
+```sh
+./main
+# 输出
+hello world.
+```
+> 思考一下为什么这里main前面需要加上./
+
+* 链接自己的库
+
+首先我们将print函数编译成库文件
+
+```sh
+ar -crv hello.a hello.o
+```
+
+此时，库文件hello.a中就包含print函数的实现，当需要使用hello.a时，只需
+
+```sh
+g++ main.o hello.a -o main
 ```
 
 ## Makefile构建工程
@@ -191,7 +266,6 @@ project(hello)
 
 include_directories(.)
 add_executable(main 
-    hello.cpp
     main.cpp)
 ```
 
@@ -216,18 +290,40 @@ target_link_libraries(main
     ${OpenCV_LIBRARIES})
 ```
 
-* 链接自己的库
+* 链接本地库文件
 
-首先我们将print函数编译成库文件
-
-```sh
-ar -crv hello.a hello.o
+工程结构
+```
+.
+├── CMakeLists.txt
+├── FindHello.cmake
+├── Hello
+│   ├── hello.a
+│   └── hello.h
+├── hello.cpp
+└── main.cpp
 ```
 
-此时，库文件hello.a中就包含print函数的实现，当需要使用hello.a时，只需
+```cmake
+cmake_minimum_required(VERSION 3.16.3)
+project(hello)
 
-```sh
-g++ main.o hello.a -o main
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}; ${CMAKE_MODULE_PATH}")
+find_package(Hello)
+
+include_directories(.)
+include_directories(${HELLO_INCLUDE_DIRS})
+add_executable(main
+    main.cpp)
+target_link_libraries(main ${HELLO_LIBRARIES})
+
+```
+
+FindXXX.cmake
+```cmake
+set(HELLO_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/Hello")
+set(HELLO_LIBRARIES "${CMAKE_SOURCE_DIR}/Hello/hello.a")
+set(HELLO_FOUND TRUE)
 ```
 
 ### 更优雅地构建工程
