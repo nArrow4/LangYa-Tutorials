@@ -48,10 +48,11 @@ Markdown的语法因不同的解析器或编辑器而异，Typora使用的是Git
 ### 代码块
 
 ```markdown
-```cpp
+​```cpp
 int main() {
     printf("hello world\n");
-}```
+}
+​```
 ```
 ```cpp
 int main() {
@@ -65,11 +66,11 @@ int main() {
 行间公式：
 $$\frac{\Sigma_{i=0}^N{(i+1)}}{\sqrt{N}}$$
 
-行内公式：$ \omega $
+行内公式：$ \omega $111111
 ```
 行间公式：
 $$\frac{\Sigma_{i=0}^N{(i+1)}}{\sqrt{N}}$$
 
-行内公式：$\omega$
+行内公式：$\omega$ 11111
 
 ### 更多的功能大家自行探索

@@ -7,7 +7,7 @@ sudo apt-get install vim
 
 ## Learning Vim
 
-这里只是简单列举常用语法，详情阅读《vim.pdf》
+这里只是简单列举常用语法，详情阅读[《vim.pdf》](./assets/vim.pdf)
 
 ### 打开，保存，关闭文件
 

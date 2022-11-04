@@ -20,7 +20,7 @@
 
 ### Q3. 编程环境配置
 
-1. 完成Vim章节展示的相关配置，并使用Vim指令完成相关操作
+1. 完成Vim章节展示的相关配置，并使用Vim指令完成[vim.txt](./assets/vim.txt)相关操作
 2. 完成VSCode/CLion远程连接环境配置
 
 ### Q4. CMake构建工程
