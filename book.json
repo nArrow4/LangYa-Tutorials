@@ -2,7 +2,8 @@
     "plugins" : [
         "theme-comscore",
         "tbfed-pagefooter",
-        "mermaid-gb3"
+        "mermaid-gb3",
+        "katex"
     ],
     "pluginsConfig": {
         "tbfed-pagefooter": {
