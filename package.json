@@ -1,0 +1,25 @@
+{
+  "name": "langya-tutorials",
+  "version": "1.0.0",
+  "author": "zhiyu",
+  "dependencies": {
+    "gitbook-plugin-tbfed-pagefooter": "^0.0.1",
+    "gitbook-plugin-theme-comscore": "^0.0.3"
+  },
+  "scripts": {
+    "postinstall": "patch-package"
+  },
+  "description": "Tutorials for RM beginners @ LangYa, HUST.",
+  "main": "gitalk_config.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nArrow4/LangYa-Tutorials.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nArrow4/LangYa-Tutorials/issues"
+  },
+  "homepage": "https://github.com/nArrow4/LangYa-Tutorials#readme"
+}

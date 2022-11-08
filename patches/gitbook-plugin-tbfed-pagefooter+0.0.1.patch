@@ -1,0 +1,37 @@
+diff --git a/node_modules/gitbook-plugin-tbfed-pagefooter/index.js b/node_modules/gitbook-plugin-tbfed-pagefooter/index.js
+index 70475f8..91013c6 100644
+--- a/node_modules/gitbook-plugin-tbfed-pagefooter/index.js
++++ b/node_modules/gitbook-plugin-tbfed-pagefooter/index.js
+@@ -10,7 +10,7 @@ module.exports = {
+     'page:before': function(page) {
+       var _label = 'File Modify: ',
+           _format = 'YYYY-MM-DD HH:mm:ss',
+-          _copy = 'powered by Gitbook'
++          _copy = 'powered by LangYa'
+       if(this.options.pluginsConfig['tbfed-pagefooter']) {
+         _label = this.options.pluginsConfig['tbfed-pagefooter']['modify_label'] || _label;
+         _format = this.options.pluginsConfig['tbfed-pagefooter']['modify_format'] || _format;
+@@ -23,7 +23,22 @@ module.exports = {
+         '<span class="footer-modification">' +
+         _label +
+         '\n{{file.mtime | date("' + _format +
+-        '")}}\n</span></footer>'
++        '")}}\n</span></footer>';
++      str+='\n\n<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">'+
++        '\n\n<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>'+
++        '\n\n<div id="gitalk-container"></div>'+
++        '<script>\
++          var gitalk = new Gitalk({\
++            clientID: "9f8430941837ef95d13b",\
++            clientSecret: "ca1e6d3d575da60b344d04ddf8af7f6814632019",\
++            repo: "LangYa-Tutorials",\
++            owner: "nArrow4",\
++            admin: ["nArrow4"],\
++            id: location.pathname.slice(location.pathname.indexOf("/", 1), location.pathname.lastIndexOf(".")),\
++            distractionFreeMode: false\
++          });\
++          gitalk.render("gitalk-container");\
++        </script>';
+       page.content = page.content + str;
+       return page;
+     }

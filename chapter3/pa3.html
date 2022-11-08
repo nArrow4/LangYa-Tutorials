@@ -1,0 +1,728 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>PA3: Car Plate Recognition · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../chapter4/" />
+    
+    
+    <link rel="prev" href="opencv.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter0/">
+            
+                <a href="../chapter0/">
+            
+                    
+                    Chapter0: 开始之前
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter0/about_langya.html">
+            
+                <a href="../chapter0/about_langya.html">
+            
+                    
+                    关于狼牙算法组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter0/intros_to_tasks.html">
+            
+                <a href="../chapter0/intros_to_tasks.html">
+            
+                    
+                    各项目组介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../chapter0/how_to_contribute.html">
+            
+                <a href="../chapter0/how_to_contribute.html">
+            
+                    
+                    贡献你的一份力量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../chapter1/">
+            
+                <a href="../chapter1/">
+            
+                    
+                    Chapter1: 初识Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../chapter1/linux.html">
+            
+                <a href="../chapter1/linux.html">
+            
+                    
+                    Section1.1: Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../chapter1/gcc_makefile_cmake.html">
+            
+                <a href="../chapter1/gcc_makefile_cmake.html">
+            
+                    
+                    Section1.2: GCC & Makefile & CMake
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../chapter1/git.html">
+            
+                <a href="../chapter1/git.html">
+            
+                    
+                    Section1.3: Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../chapter1/vim.html">
+            
+                <a href="../chapter1/vim.html">
+            
+                    
+                    Section1.4: Vim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../chapter1/ssh.html">
+            
+                <a href="../chapter1/ssh.html">
+            
+                    
+                    Section1.5: SSH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../chapter1/markdown.html">
+            
+                <a href="../chapter1/markdown.html">
+            
+                    
+                    Section1.6: Markdown
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../chapter1/pa1.html">
+            
+                <a href="../chapter1/pa1.html">
+            
+                    
+                    PA1: Environments
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../chapter2/">
+            
+                <a href="../chapter2/">
+            
+                    
+                    Chapter2: 相机模型 & 位姿估计
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../chapter2/camera_model.html">
+            
+                <a href="../chapter2/camera_model.html">
+            
+                    
+                    Section2.1: Camera Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../chapter2/pose.html">
+            
+                <a href="../chapter2/pose.html">
+            
+                    
+                    Section2.2: Pose Estimation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../chapter2/pa2.html">
+            
+                <a href="../chapter2/pa2.html">
+            
+                    
+                    PA2: Coordinate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Chapter3: OpenCV图像处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="opencv.html">
+            
+                <a href="opencv.html">
+            
+                    
+                    Section3.1: OpenCV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="pa3.html">
+            
+                <a href="pa3.html">
+            
+                    
+                    PA3: Car Plate Recognition
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../chapter4/">
+            
+                <a href="../chapter4/">
+            
+                    
+                    Chapter4: 贝叶斯滤波
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../chapter4/kf.html">
+            
+                <a href="../chapter4/kf.html">
+            
+                    
+                    Section4.1: Kalman Filter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../chapter4/ekf.html">
+            
+                <a href="../chapter4/ekf.html">
+            
+                    
+                    Section4.2: Extend Kalman Filter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../chapter4/pf.html">
+            
+                <a href="../chapter4/pf.html">
+            
+                    
+                    Section4.2: Particle Filter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../chapter4/pa4.html">
+            
+                <a href="../chapter4/pa4.html">
+            
+                    
+                    PA4: Mouse Tracking
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../chapter5/">
+            
+                <a href="../chapter5/">
+            
+                    
+                    Chapter5: 辅瞄及其仿真
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../chapter5/detector.html">
+            
+                <a href="../chapter5/detector.html">
+            
+                    
+                    Section5.1: Detector
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../chapter5/estimator.html">
+            
+                <a href="../chapter5/estimator.html">
+            
+                    
+                    Section5.2: Estimator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../chapter5/multi-thread.html">
+            
+                <a href="../chapter5/multi-thread.html">
+            
+                    
+                    Section5.3: Multi-Thread
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../chapter5/simulation.html">
+            
+                <a href="../chapter5/simulation.html">
+            
+                    
+                    Section5.4: Simulation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../chapter5/pa5.html">
+            
+                <a href="../chapter5/pa5.html">
+            
+                    
+                    PA5: 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../chapter6/">
+            
+                <a href="../chapter6/">
+            
+                    
+                    Chapter6: 补充材料
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../chapter6/readings.html">
+            
+                <a href="../chapter6/readings.html">
+            
+                    
+                    Section6.1: Recomand Readings
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >PA3: Car Plate Recognition</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="pa3-car-plate-recognition">PA3: Car Plate Recognition</h1>
+<footer class="page-footer"><span class="copyright">&#xA9; LangYa all right reserved&#xFF0C;powered by LangYa</span><span class="footer-modification">Update: 
+2022-11-08 14:34:26
+</span></footer>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+
+<p><div id="gitalk-container"></div><script>          var gitalk = new Gitalk({            clientID: "9f8430941837ef95d13b",            clientSecret: "ca1e6d3d575da60b344d04ddf8af7f6814632019",            repo: "LangYa-Tutorials",            owner: "nArrow4",            admin: ["nArrow4"],            id: location.pathname.slice(location.pathname.indexOf("/", 1), location.pathname.lastIndexOf(".")),            distractionFreeMode: false          });          gitalk.render("gitalk-container");        </script></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="opencv.html" class="navigation navigation-prev " aria-label="Previous page: Section3.1: OpenCV">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../chapter4/" class="navigation navigation-next " aria-label="Next page: Chapter4: 贝叶斯滤波">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"PA3: Car Plate Recognition","level":"1.5.2","depth":2,"next":{"title":"Chapter4: 贝叶斯滤波","level":"1.6","depth":1,"path":"chapter4/README.md","ref":"chapter4/README.md","articles":[{"title":"Section4.1: Kalman Filter","level":"1.6.1","depth":2,"path":"chapter4/kf.md","ref":"chapter4/kf.md","articles":[]},{"title":"Section4.2: Extend Kalman Filter","level":"1.6.2","depth":2,"path":"chapter4/ekf.md","ref":"chapter4/ekf.md","articles":[]},{"title":"Section4.2: Particle Filter","level":"1.6.3","depth":2,"path":"chapter4/pf.md","ref":"chapter4/pf.md","articles":[]},{"title":"PA4: Mouse Tracking","level":"1.6.4","depth":2,"path":"chapter4/pa4.md","ref":"chapter4/pa4.md","articles":[]}]},"previous":{"title":"Section3.1: OpenCV","level":"1.5.1","depth":2,"path":"chapter3/opencv.md","ref":"chapter3/opencv.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-comscore","tbfed-pagefooter","mermaid-gb3","katex"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy LangYa","modify_label":"Update: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter3/pa3.md","mtime":"2022-11-08T14:34:26.830Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-08T14:35:12.703Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
